@@ -4,10 +4,13 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LoaderModule } from './loader/loader.module';
+import { LoaderConfig } from './loader/loader-config.model';
 
-export const loaderConfig = {
-  blockUI: true, opacity: 0.5, text: 'testing loader, loading...'
-}
+// export const loaderConfig = {
+//   blockUI: true, opacity: 0.5, text: 'testing loader, loading...'
+// }
+
+const config = new LoaderConfig('testing txt', true, 0.5);
 
 @NgModule({
   declarations: [
@@ -16,7 +19,7 @@ export const loaderConfig = {
   imports: [
     BrowserModule,
     FormsModule,
-    LoaderModule.forRoot()
+    LoaderModule.forRoot(config)
   ],  
   bootstrap: [AppComponent]
 })
