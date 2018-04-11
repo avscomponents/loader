@@ -11,16 +11,22 @@ import { LoaderConfig } from './loader-config.model';
   ],
   exports: [LoaderComponent],
   declarations: [LoaderComponent],
-  providers: [LoaderService, LoaderConfig]
+  providers: [LoaderService]
 })
 export class LoaderModule {
-  static forRoot(config): ModuleWithProviders {
-    // console.log(config);
+  static forRoot(config: ILoaderConfig): ModuleWithProviders {
+    console.log(config);
+    const loader = new LoaderService();
+    if (config) {
+      loader.blockUI = config.blockUI;
+      loader.text = config.text;
+      loader.opacity = config.opacity;
+    }
     return {
       ngModule: LoaderModule,
       providers: [{
         provide: LoaderService,
-        useValue: new LoaderService(config)
+        useValue: loader
       }]
     };
   }

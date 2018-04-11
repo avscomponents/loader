@@ -8,23 +8,27 @@ export class LoaderService {
   public blockUI: boolean;
   public opacity: number;
 
-  constructor(config: any) {
- //  constructor() {
+  
+        constructor() {
+    
+ // constructor(config: ILoaderConfig) {
     // if (config) {
     //   this.blockUI = config.blockUI;
     //   this.text = config.text;
     //   this.opacity = config.opacity;
-
     // }
    
-    // this.text = 'testing text in service....';
-    console.log('this.loading in service constructor: ', this.loading);
+    // this.text = 'testing text in service....';    
   }
-  show() {
+  show(blockUI?: boolean, text?: string ) {
     this.loading = true;
+    this.blockUI = blockUI;
+    this.text = text;
   }
   hide() {
     this.loading = false;
+    this.blockUI = false;
+    this.text = '';
   }
 
 }

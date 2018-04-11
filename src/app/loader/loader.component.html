@@ -1,2 +1,3 @@
 <div *ngIf="loader.loading"class="loader"> </div> 
-<div *ngIf="loader.text && loader.loading" class="text"> {{loader.text}} </div>
+<div *ngIf="loader.loading && loader.text" class="text"> {{loader.text}} </div>
+<div *ngIf="loader.loading && loader.blockUI" class="blockUI"></div>

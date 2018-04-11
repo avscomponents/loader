@@ -6,11 +6,11 @@ import { AppComponent } from './app.component';
 import { LoaderModule } from './loader/loader.module';
 import { LoaderConfig } from './loader/loader-config.model';
 
-// export const loaderConfig = {
-//   blockUI: true, opacity: 0.5, text: 'testing loader, loading...'
-// }
+export const loaderConfig = {
+  blockUI: false, opacity: 0.5, text: ' Loading text test. loading ...'
+}
 
-const config = new LoaderConfig('testing txt', true, 0.5);
+// const config = new LoaderConfig('Loading text test. loading ...', false, 0.5);
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ const config = new LoaderConfig('testing txt', true, 0.5);
   imports: [
     BrowserModule,
     FormsModule,
-    LoaderModule.forRoot(config)
+    LoaderModule.forRoot(loaderConfig)
   ],  
   bootstrap: [AppComponent]
 })

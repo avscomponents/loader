@@ -2,7 +2,7 @@
     position: fixed;
     left: 50%;
     top: 50%;
-    z-index: 1;
+    z-index: 10001;
     width: 130px;
     height: 130px;
     margin: -75px 0 0 -75px;
@@ -17,15 +17,15 @@
   
   .text {
     position: fixed;
+    color: #f3f3f3;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 5vh; 
     left: 50%;
-    top: 50%;
-    z-index: 1;
-    margin-top: 100px;
-    margin-left: -100px;
-    font-size: 3vh; 
-    
-    
-    
+    top: 70%;
+    z-index: 10002;
+    /* margin-top: 100px;
+    margin-left: -150px; */
+    transform: translate(-50%, -50%);   
   }
 
   @-webkit-keyframes spin {
@@ -38,22 +38,18 @@
     100% { transform: rotate(360deg); }
   }
   
-  /* Add animation to "page content" */
-  .animate-bottom {
-    position: relative;
-    -webkit-animation-name: animatebottom;
-    -webkit-animation-duration: 1s;
-    animation-name: animatebottom;
-    animation-duration: 1s
+  .blockUI {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10000;
+    cursor: wait;
   }
   
-  @-webkit-keyframes animatebottom {
-    from { bottom:-100px; opacity:0 } 
-    to { bottom:0px; opacity:1 }
-  }
-  
-  @keyframes animatebottom { 
-    from{ bottom:-100px; opacity:0 } 
-    to{ bottom:0; opacity:1 }
-  }
   
